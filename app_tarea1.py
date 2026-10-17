@@ -1,3 +1,4 @@
+import re
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -46,6 +47,7 @@ else:
     if ejecutar:
         stop = set(stopwords.words(idioma))
         docs = df[columna].dropna().astype(str).tolist()
+        docs = [re.sub(r"\.([A-Z])", r". \1", d) for d in docs]
 
         clean_docs = []
         for doc in docs:
