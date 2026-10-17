@@ -18,7 +18,7 @@ st.markdown("<p style='text-align: center;'>Sube un CSV con descripciones de lib
 
 archivo = st.file_uploader("Subir archivo CSV", type="csv")
 
-# primero se carga el csv, después de habilita el botón ejecutar
+# primero se carga el csv, después se habilita el botón ejecutar
 if archivo is None:
     _, centro, _ = st.columns([2, 1, 2])
     with centro:
